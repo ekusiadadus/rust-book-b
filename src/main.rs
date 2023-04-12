@@ -41,3 +41,33 @@ fn main() {
     func_ex_print_result(func_ex_div_result(10, 5));
     func_ex_print_result(func_ex_div_result(10, 0));
 }
+
+#[test]
+fn test_ex_div_some() {
+    assert_eq!(func_ex_div_some(10, 5), Some(2));
+    assert_eq!(func_ex_div_some(10, 0), None);
+}
+
+#[test]
+fn test_ex_div_result() {
+    assert_eq!(func_ex_div_result(10, 5), Ok(2));
+    assert_eq!(func_ex_div_result(10, 0), Err("div by zero"));
+}
+
+#[test]
+fn test_ex_print_some() {
+    func_ex_print_some(func_ex_div_some(10, 5));
+    func_ex_print_some(func_ex_div_some(10, 0));
+}
+
+#[test]
+fn test_ex_print_some_match() {
+    func_ex_print_some_match(func_ex_div_some(10, 5));
+    func_ex_print_some_match(func_ex_div_some(10, 0));
+}
+
+#[test]
+fn test_ex_print_result() {
+    func_ex_print_result(func_ex_div_result(10, 5));
+    func_ex_print_result(func_ex_div_result(10, 0));
+}
